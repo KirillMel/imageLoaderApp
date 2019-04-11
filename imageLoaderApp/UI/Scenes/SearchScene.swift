@@ -17,17 +17,7 @@ class SearchSceneView: UIView {
         super.init(frame: frame)
         
         self.setUpViews()
-        self.addSubview(tableView)
-        
-        tableView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        tableView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        tableView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.0).isActive = true
-        tableView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1.0).isActive = true
-        
-        headerView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        headerView.widthAnchor.constraint(equalTo: tableView.widthAnchor).isActive = true
-        headerView.centerXAnchor.constraint(equalTo: tableView.centerXAnchor).isActive = true
-        headerView.topAnchor.constraint(equalTo: tableView.topAnchor).isActive = true
+        self.setConstraints()
         
         tableView.tableHeaderView?.layoutIfNeeded()
     }
@@ -38,12 +28,29 @@ class SearchSceneView: UIView {
     
     private func setUpViews() {
         headerView = UISearchBar()
+        headerView.searchBarStyle = .minimal
         headerView.translatesAutoresizingMaskIntoConstraints = false
         
         tableView = UITableView()
         tableView.rowHeight = 180
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
-        tableView.tableHeaderView = headerView
+        self.addSubview(tableView)
+        self.addSubview(headerView)
+        self.backgroundColor = .white
+    }
+    
+    private func setConstraints() {
+        if #available(iOS 11, *) {
+            let guide = self.safeAreaLayoutGuide
+            NSLayoutConstraint.activate([headerView.heightAnchor.constraint(equalToConstant: 55),
+                                         headerView.widthAnchor.constraint(equalTo: tableView.widthAnchor),
+                                         headerView.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+                                         headerView.topAnchor.constraint(equalTo: guide.topAnchor),
+                                         tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
+                                         tableView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                                         tableView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.0),
+                                         tableView.heightAnchor.constraint(equalTo: guide.heightAnchor, multiplier: 1.0, constant: -55)])
+        }
     }
 }

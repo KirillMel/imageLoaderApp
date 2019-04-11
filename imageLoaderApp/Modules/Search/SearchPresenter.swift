@@ -33,7 +33,7 @@ class SearchPresenter: SearchPresenterForViewProtocol, SearchPresenterForInterac
     
     func searchItem(with title: String?) {
         guard let title = title, !title.isEmpty else {
-            viewController.displayAlert(title: "Notice.", message: "You must fill out field")
+            viewController.displayAlert(title: "Notice.", message: "You must enter correct string")
             return
         }
         interactor.searchItem(with: title)

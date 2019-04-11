@@ -11,15 +11,15 @@ import RealmSwift
 import Realm
 
 final class DataManager<T> where T:Object {
+    let realm = try! Realm()
+    
     func saveData(_ item: T) {
-        let realm = try! Realm()
         try! realm.write {
             realm.add(item)
         }
     }
     
     func loadData() -> [T] {
-        let realm = try! Realm()
         return Array(realm.objects(T.self))
     }
 }

@@ -32,15 +32,7 @@ class GifCell : UITableViewCell {
         
         self.contentView.addSubview(mainTextLabel)
         self.contentView.addSubview(mainImage)
-        
-        mainImage.widthAnchor.constraint(equalToConstant: 120).isActive = true
-        mainImage.heightAnchor.constraint(equalToConstant: 140).isActive = true
-        mainImage.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
-        mainImage.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10).isActive = true
- 
-        mainTextLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
-        mainTextLabel.leadingAnchor.constraint(equalTo: self.mainImage.trailingAnchor, constant: 10).isActive = true
-        mainTextLabel.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 1.0, constant: -160).isActive = true
+        self.setConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -52,6 +44,16 @@ class GifCell : UITableViewCell {
         
         self.mainImage.image = gif
         self.mainTextLabel.text = text
+    }
+    
+    private func setConstraints() {
+        NSLayoutConstraint.activate([mainImage.widthAnchor.constraint(equalToConstant: 120),
+                                     mainImage.heightAnchor.constraint(equalToConstant: 140),
+                                     mainImage.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
+                                     mainImage.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10),
+                                     mainTextLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
+                                     mainTextLabel.leadingAnchor.constraint(equalTo: self.mainImage.trailingAnchor, constant: 10),
+                                     mainTextLabel.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 1.0, constant: -160)])
     }
 }
 

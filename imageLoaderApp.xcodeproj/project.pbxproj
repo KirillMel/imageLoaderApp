@@ -114,12 +114,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		ED270B9A225E095500EE0456 /* modules */ = {
+		ED270B9A225E095500EE0456 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				ED270B9B225E096900EE0456 /* Search */,
 			);
-			path = modules;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		ED270B9B225E096900EE0456 /* Search */ = {
@@ -136,7 +136,7 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		ED270B9C225E099800EE0456 /* services */ = {
+		ED270B9C225E099800EE0456 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				ED0EC0E6225F6FAD006B2826 /* DataLoader.swift */,
@@ -144,7 +144,8 @@
 				EDBAC157225F3E7A009745CF /* Networking */,
 				EDBAC160225F3FA2009745CF /* Parsing */,
 			);
-			path = services;
+			name = Services;
+			path = Services.temp_caseinsensitive_rename.;
 			sourceTree = "<group>";
 		};
 		EDBAC14C225F13A4009745CF /* Scenes */ = {
@@ -234,8 +235,8 @@
 				EDD2F56F225DEA080031CFC6 /* Info.plist */,
 				EDBAC154225F2CE5009745CF /* Data */,
 				EDBAC153225F2CBB009745CF /* Settings */,
-				ED270B9A225E095500EE0456 /* modules */,
-				ED270B9C225E099800EE0456 /* services */,
+				ED270B9A225E095500EE0456 /* Modules */,
+				ED270B9C225E099800EE0456 /* Services */,
 				EDBAC14F225F2705009745CF /* UI */,
 			);
 			path = imageLoaderApp;

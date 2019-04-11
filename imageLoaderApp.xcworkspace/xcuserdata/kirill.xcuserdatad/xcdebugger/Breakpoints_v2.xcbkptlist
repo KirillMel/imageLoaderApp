@@ -151,8 +151,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "imageLoaderApp/modules/Search/SearchPresenter.swift"
-            timestampString = "576690761.759246"
+            filePath = "imageLoaderApp/Modules/Search/SearchPresenter.swift"
+            timestampString = "576702696.00175"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -247,8 +247,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "imageLoaderApp/modules/Search/SearchViewController.swift"
-            timestampString = "576686429.961722"
+            filePath = "imageLoaderApp/Modules/Search/SearchViewController.swift"
+            timestampString = "576702696.001953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -279,8 +279,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "imageLoaderApp/modules/Search/SearchViewController.swift"
-            timestampString = "576686429.9623049"
+            filePath = "imageLoaderApp/Modules/Search/SearchViewController.swift"
+            timestampString = "576702696.002037"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -295,13 +295,61 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "imageLoaderApp/modules/Search/SearchViewController.swift"
-            timestampString = "576686429.962694"
+            filePath = "imageLoaderApp/Modules/Search/SearchViewController.swift"
+            timestampString = "576702696.0020961"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
             endingLineNumber = "44"
             landmarkName = "displayAlert(title:message:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "imageLoaderApp/Services.temp_caseinsensitive_rename./Networking/ServerService.swift"
+            timestampString = "576702696.002171"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "getUrl(with:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "imageLoaderApp/Services.temp_caseinsensitive_rename./Networking/URLSessionWrapper.swift"
+            timestampString = "576702696.00227"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "getRequest(request:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "imageLoaderApp/Services.temp_caseinsensitive_rename./Parsing/FieldParser.swift"
+            timestampString = "576702696.00235"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "parse(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

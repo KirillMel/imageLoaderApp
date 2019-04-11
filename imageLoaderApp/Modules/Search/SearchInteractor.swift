@@ -15,7 +15,7 @@ class SearchInteractor: SearchInteractorProtocol {
     private let dataManager = DataManager<GifItem>()
     private let serverService = ServerService()
     private let dataLoader = DataLoader()
-    //MARK: - enteties
+    //MARK: - Enteties
     private var items: [GifItem]
     
     required init(presenter: SearchPresenterForInteractorProtocol) {
@@ -24,21 +24,21 @@ class SearchInteractor: SearchInteractorProtocol {
     }
     //MARK: - SearchInteractorProtocol
     func searchItem(with title: String) {
-        serverService.getUrl(with: title){ result in
+        serverService.getUrl(with: title){ [weak self] result in
             guard let result = result as? String else {
-                self.presenter.searchItemEnded(with: "Error while searching gif")
+                self?.presenter.searchItemEnded(with: "Error while searching gif")
                 return
             }
             
-            self.dataLoader.getLoadData(with: result) { data in
+            self?.dataLoader.getLoadData(with: result) { [weak self] data in
                 let newItem = GifItem()
                 newItem.title = title
                 newItem.gifData = data as! Data
                 
-                self.items.append(newItem)
-                self.presenter.searchItemEnded(with: nil)
+                self?.items.append(newItem)
+                self?.presenter.searchItemEnded(with: nil)
                 
-                self.saveItem(newItem)
+                self?.saveItem(newItem)
             }
         }
     }
