@@ -26,7 +26,6 @@
 		EDBAC164225F4261009745CF /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBAC163225F4261009745CF /* DataParser.swift */; };
 		EDBAC166225F43E9009745CF /* ParserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBAC165225F43E9009745CF /* ParserProtocol.swift */; };
 		EDD2F564225DEA060031CFC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2F563225DEA060031CFC6 /* AppDelegate.swift */; };
-		EDD2F566225DEA060031CFC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2F565225DEA060031CFC6 /* ViewController.swift */; };
 		EDD2F56B225DEA080031CFC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDD2F56A225DEA080031CFC6 /* Assets.xcassets */; };
 		EDD2F56E225DEA080031CFC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD2F56C225DEA080031CFC6 /* LaunchScreen.storyboard */; };
 		EDD2F579225DEA080031CFC6 /* imageLoaderAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2F578225DEA080031CFC6 /* imageLoaderAppTests.swift */; };
@@ -67,7 +66,6 @@
 		EDBAC165225F43E9009745CF /* ParserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserProtocol.swift; sourceTree = "<group>"; };
 		EDD2F560225DEA060031CFC6 /* imageLoaderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imageLoaderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD2F563225DEA060031CFC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EDD2F565225DEA060031CFC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EDD2F56A225DEA080031CFC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDD2F56D225DEA080031CFC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDD2F56F225DEA080031CFC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -239,7 +237,6 @@
 				ED270B9A225E095500EE0456 /* modules */,
 				ED270B9C225E099800EE0456 /* services */,
 				EDBAC14F225F2705009745CF /* UI */,
-				EDD2F565225DEA060031CFC6 /* ViewController.swift */,
 			);
 			path = imageLoaderApp;
 			sourceTree = "<group>";
@@ -423,7 +420,6 @@
 				ED0EC0E5225F6259006B2826 /* URLSessionWrapper.swift in Sources */,
 				ED2D1C76225E768C007D1788 /* SearchConfigurator.swift in Sources */,
 				ED2D1C6E225E736E007D1788 /* SearchViewController.swift in Sources */,
-				EDD2F566225DEA060031CFC6 /* ViewController.swift in Sources */,
 				ED2D1C72225E757B007D1788 /* SearchInteractor.swift in Sources */,
 				ED2D1C74225E7661007D1788 /* SearchRouter.swift in Sources */,
 				EDBAC162225F4248009745CF /* FieldParser.swift in Sources */,

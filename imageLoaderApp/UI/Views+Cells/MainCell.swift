@@ -9,7 +9,6 @@
 import UIKit
 import SwiftGifOrigin
 
-
 class GifCell : UITableViewCell {
     private let mainTextLabel: UILabel = {
         let label = UILabel()

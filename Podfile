@@ -14,6 +14,5 @@ target 'imageLoaderApp' do
 
 pod 'RealmSwift'
 pod ‘SwiftGifOrigin’, ‘~> 1.6.1’
-pod 'SwiftyGif'
 
 end
