@@ -16,7 +16,7 @@ protocol SearchViewProtocol: class {
 
 protocol SearchPresenterForViewProtocol {
     func getCountOfList() -> Int
-    func getItem(by id: Int) -> (title: String, imageURL: String)
+    func getItem(by id: Int) -> (title: String, imageData: Data)
     func searchItem(with title: String?) -> Void
     func setUpModule() -> Void
 }

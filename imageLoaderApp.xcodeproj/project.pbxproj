@@ -12,6 +12,7 @@
 		ED0EC0E1225F5732006B2826 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0EC0E0225F5732006B2826 /* RequestBuilder.swift */; };
 		ED0EC0E3225F5C83006B2826 /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0EC0E2225F5C83006B2826 /* ServerService.swift */; };
 		ED0EC0E5225F6259006B2826 /* URLSessionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0EC0E4225F6259006B2826 /* URLSessionWrapper.swift */; };
+		ED0EC0E7225F6FAD006B2826 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0EC0E6225F6FAD006B2826 /* DataLoader.swift */; };
 		ED270B9E225E0C9300EE0456 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED270B9D225E0C9300EE0456 /* MainCell.swift */; };
 		ED2D1C6A225E6D86007D1788 /* SearchProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2D1C69225E6D86007D1788 /* SearchProtocols.swift */; };
 		ED2D1C6C225E7222007D1788 /* GifItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2D1C6B225E7222007D1788 /* GifItem.swift */; };
@@ -23,7 +24,6 @@
 		ED2D1C78225E85BB007D1788 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2D1C77225E85BB007D1788 /* DataManager.swift */; };
 		EDBAC14E225F13C4009745CF /* SearchScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBAC14D225F13C4009745CF /* SearchScene.swift */; };
 		EDBAC162225F4248009745CF /* FieldParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBAC161225F4248009745CF /* FieldParser.swift */; };
-		EDBAC164225F4261009745CF /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBAC163225F4261009745CF /* DataParser.swift */; };
 		EDBAC166225F43E9009745CF /* ParserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBAC165225F43E9009745CF /* ParserProtocol.swift */; };
 		EDD2F564225DEA060031CFC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2F563225DEA060031CFC6 /* AppDelegate.swift */; };
 		EDD2F56B225DEA080031CFC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDD2F56A225DEA080031CFC6 /* Assets.xcassets */; };
@@ -51,6 +51,7 @@
 		ED0EC0E0225F5732006B2826 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		ED0EC0E2225F5C83006B2826 /* ServerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
 		ED0EC0E4225F6259006B2826 /* URLSessionWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionWrapper.swift; sourceTree = "<group>"; };
+		ED0EC0E6225F6FAD006B2826 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		ED270B9D225E0C9300EE0456 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		ED2D1C69225E6D86007D1788 /* SearchProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProtocols.swift; sourceTree = "<group>"; };
 		ED2D1C6B225E7222007D1788 /* GifItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifItem.swift; sourceTree = "<group>"; };
@@ -62,7 +63,6 @@
 		ED2D1C77225E85BB007D1788 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		EDBAC14D225F13C4009745CF /* SearchScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScene.swift; sourceTree = "<group>"; };
 		EDBAC161225F4248009745CF /* FieldParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldParser.swift; sourceTree = "<group>"; };
-		EDBAC163225F4261009745CF /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 		EDBAC165225F43E9009745CF /* ParserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserProtocol.swift; sourceTree = "<group>"; };
 		EDD2F560225DEA060031CFC6 /* imageLoaderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imageLoaderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD2F563225DEA060031CFC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,9 +139,10 @@
 		ED270B9C225E099800EE0456 /* services */ = {
 			isa = PBXGroup;
 			children = (
-				EDBAC160225F3FA2009745CF /* Parsing */,
-				EDBAC157225F3E7A009745CF /* Networking */,
+				ED0EC0E6225F6FAD006B2826 /* DataLoader.swift */,
 				ED2D1C77225E85BB007D1788 /* DataManager.swift */,
+				EDBAC157225F3E7A009745CF /* Networking */,
+				EDBAC160225F3FA2009745CF /* Parsing */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -202,7 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				EDBAC161225F4248009745CF /* FieldParser.swift */,
-				EDBAC163225F4261009745CF /* DataParser.swift */,
 				EDBAC165225F43E9009745CF /* ParserProtocol.swift */,
 			);
 			path = Parsing;
@@ -425,8 +425,8 @@
 				EDBAC162225F4248009745CF /* FieldParser.swift in Sources */,
 				EDBAC166225F43E9009745CF /* ParserProtocol.swift in Sources */,
 				EDD2F564225DEA060031CFC6 /* AppDelegate.swift in Sources */,
+				ED0EC0E7225F6FAD006B2826 /* DataLoader.swift in Sources */,
 				ED0EC0E3225F5C83006B2826 /* ServerService.swift in Sources */,
-				EDBAC164225F4261009745CF /* DataParser.swift in Sources */,
 				ED270B9E225E0C9300EE0456 /* MainCell.swift in Sources */,
 				ED2D1C6C225E7222007D1788 /* GifItem.swift in Sources */,
 				EDBAC14E225F13C4009745CF /* SearchScene.swift in Sources */,

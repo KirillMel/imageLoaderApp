@@ -11,5 +11,5 @@ import RealmSwift
 
 class GifItem: Object {
     @objc dynamic var title: String = ""
-    @objc dynamic var url: String = ""
+    @objc dynamic var gifData: Data = Data(capacity: 0)
 }

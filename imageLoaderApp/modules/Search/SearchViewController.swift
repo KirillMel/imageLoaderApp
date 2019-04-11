@@ -9,23 +9,19 @@
 import UIKit
 
 class SearchViewController: UIViewController, SearchViewProtocol {
-    
+    //viper layers
     let configurator: SearchConfiguratorProtocol! = SearchConfigurator()
     var presenter: SearchPresenterForViewProtocol!
-    
+    //MARK: - Outlets
     var tableView: UITableView!
     var searchBar: UISearchBar!
     let cellId = "cellId"
-    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configurator.configure(with: self)
         
-        tableView.register(GifCell.self, forCellReuseIdentifier: cellId)
-
-        tableView.delegate = self
-        tableView.dataSource = self
-        searchBar.delegate = self
+        configurator.configure(with: self)
+        configureView()
         
         presenter.setUpModule()
     }
@@ -37,12 +33,14 @@ class SearchViewController: UIViewController, SearchViewProtocol {
         tableView = currentView.tableView
         searchBar = currentView.headerView
     }
-    
+    //MARK: - SearchViewProtocol
     func displayAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func reloadData() {
@@ -58,6 +56,14 @@ class SearchViewController: UIViewController, SearchViewProtocol {
             self.tableView.endUpdates()
         }
     }
+    //MARK: - Helper methods
+    private func configureView() {
+        tableView.register(GifCell.self, forCellReuseIdentifier: cellId)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        searchBar.delegate = self
+    }
 }
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
@@ -69,7 +75,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! GifCell
         let item = presenter.getItem(by: indexPath.row)
         
-        cell.setUp(with: item.title, item.imageURL)
+        cell.setUp(with: item.title, item.imageData)
         
         return cell
     }

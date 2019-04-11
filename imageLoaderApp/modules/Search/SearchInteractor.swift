@@ -9,32 +9,37 @@
 import Foundation
 
 class SearchInteractor: SearchInteractorProtocol {
-    
+    //viper layer
     weak var presenter: SearchPresenterForInteractorProtocol!
-    
-    private var items: [GifItem]
+    //MARK: - Services
     private let dataManager = DataManager<GifItem>()
-    private var serverService = ServerService()
+    private let serverService = ServerService()
+    private let dataLoader = DataLoader()
+    //MARK: - enteties
+    private var items: [GifItem]
     
     required init(presenter: SearchPresenterForInteractorProtocol) {
         self.presenter = presenter
         self.items = [GifItem]()
     }
-    
+    //MARK: - SearchInteractorProtocol
     func searchItem(with title: String) {
-        serverService.perfomRequest(with: title){ [weak self] result in
+        serverService.getUrl(with: title){ result in
             guard let result = result as? String else {
-                self?.presenter.searchItemEnded(with: "Error while searching gif")
+                self.presenter.searchItemEnded(with: "Error while searching gif")
                 return
             }
-            let newItem = GifItem()
-            newItem.title = title
-            newItem.url = result
             
-            self?.items.append(newItem)
-            
-            self?.presenter.searchItemEnded(with: nil)
-            self?.dataManager.saveData(item: newItem)
+            self.dataLoader.getLoadData(with: result) { data in
+                let newItem = GifItem()
+                newItem.title = title
+                newItem.gifData = data as! Data
+                
+                self.items.append(newItem)
+                self.presenter.searchItemEnded(with: nil)
+                
+                self.saveItem(newItem)
+            }
         }
     }
     
@@ -49,5 +54,11 @@ class SearchInteractor: SearchInteractorProtocol {
     func loadItems() {
         items = dataManager.loadData()
         presenter.loadDataDidSuccessful()
+    }
+    //MARK: - helper methods
+    private func saveItem(_ item: GifItem) {
+        DispatchQueue.main.async {
+            self.dataManager.saveData(item)
+        }
     }
 }

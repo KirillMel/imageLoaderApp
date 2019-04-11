@@ -14,10 +14,6 @@ class UrlSessionWrapper {
     
     func getRequest(request: URLRequest, complete: @escaping CompletionHandler) -> Void {
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data else {
-                complete(nil)
-                return
-            }
             complete(data)
         }
         task.resume()

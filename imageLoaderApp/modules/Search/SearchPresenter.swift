@@ -9,7 +9,7 @@
 import Foundation
 
 class SearchPresenter: SearchPresenterForViewProtocol, SearchPresenterForInteractorProtocol {
-    
+    //viper layers
     weak var viewController: SearchViewProtocol!
     var interactor: SearchInteractorProtocol!
     var router: SearchRouterProtocol!
@@ -17,23 +17,30 @@ class SearchPresenter: SearchPresenterForViewProtocol, SearchPresenterForInterac
     required init(viewController: SearchViewProtocol) {
         self.viewController = viewController
     }
+    //MARK: - SearchPresenterForViewProtocol
+    func setUpModule() {
+        interactor.loadItems()
+    }
     
     func getCountOfList() -> Int {
         return interactor.getCountOfList()
     }
     
-    func getItem(by id: Int) -> (title: String, imageURL: String) {
+    func getItem(by id: Int) -> (title: String, imageData: Data) {
         let item = interactor.getItem(by: id)
-        return (item.title, item.url)
+        return (item.title, item.gifData)
     }
     
     func searchItem(with title: String?) {
         interactor.searchItem(with: title!)
     }
-    
+    //MARK: - SearchPresenterForInteractorProtocol
     func searchItemEnded(with error: String?) {
-        if (error == nil) {
-            let position = IndexPath(row: interactor.getCountOfList() - 1, section: 0)
+        if let error = error {
+            viewController.displayAlert(title: "Notice.", message: error)
+        } else {
+            let count = interactor.getCountOfList() - 1
+            let position = IndexPath(row: count, section: 0)
             viewController.insertItem(position: position)
         }
     }
@@ -41,9 +48,4 @@ class SearchPresenter: SearchPresenterForViewProtocol, SearchPresenterForInterac
     func loadDataDidSuccessful() {
         viewController.reloadData()
     }
-    
-    func setUpModule() {
-        interactor.loadItems()
-    }
-    
 }

@@ -47,8 +47,8 @@ class GifCell : UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUp(with text: String, _ image: String) {
-        let gif = UIImage.gif(url: image)
+    func setUp(with text: String, _ image: Data) {
+        let gif = UIImage.gif(data: image)
         
         self.mainImage.image = gif
         self.mainTextLabel.text = text

@@ -11,7 +11,7 @@ import RealmSwift
 import Realm
 
 final class DataManager<T> where T:Object {
-    func saveData(item: T) {
+    func saveData(_ item: T) {
         let realm = try! Realm()
         try! realm.write {
             realm.add(item)
