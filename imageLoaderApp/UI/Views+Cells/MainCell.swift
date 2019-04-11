@@ -12,7 +12,7 @@ import SwiftGifOrigin
 class GifCell : UITableViewCell {
     private let mainTextLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont.boldSystemFont(ofSize: 18)
         label.textAlignment = NSTextAlignment.center
         label.numberOfLines = 4
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -33,14 +33,14 @@ class GifCell : UITableViewCell {
         self.contentView.addSubview(mainTextLabel)
         self.contentView.addSubview(mainImage)
         
-        mainImage.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        mainImage.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        mainImage.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        mainImage.heightAnchor.constraint(equalToConstant: 140).isActive = true
         mainImage.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
-        mainImage.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20).isActive = true
+        mainImage.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10).isActive = true
  
         mainTextLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
-        mainTextLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor, constant: 20).isActive = true
-        mainTextLabel.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.7).isActive = true
+        mainTextLabel.leadingAnchor.constraint(equalTo: self.mainImage.trailingAnchor, constant: 10).isActive = true
+        mainTextLabel.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 1.0, constant: -160).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {

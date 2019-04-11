@@ -41,7 +41,7 @@ class SearchSceneView: UIView {
         headerView.translatesAutoresizingMaskIntoConstraints = false
         
         tableView = UITableView()
-        tableView.rowHeight = 100
+        tableView.rowHeight = 180
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         tableView.tableHeaderView = headerView
